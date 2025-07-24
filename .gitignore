@@ -1,8 +1,9 @@
-# Arquivos objeto (.o)
-*.o
+
 
 # Executáveis
 train
+*.o
+*.out
 
 # Arquivos temporários, backups e swap
 *~
