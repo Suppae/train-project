@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "train.h": "c",
-        "features-time64.h": "c",
-        "time.h": "c"
-    },
-    "makefile.configureOnOpen": false
-}
