@@ -10,8 +10,7 @@ int main(){
     addtrain(headlistoftrains,"Coimbra","Pombal");
     print_current_time();
     print_interface_options(headlistofstations,headlistoftrains,headofseats);
-    reserve_seat(headofseats,"1","RUI");
-    reserve_seat(headofseats,"13","matilde");
+    
     
     
     printf("\n\n-------------------------------------------------------------------------FIM----------------------------------------------------------------------------\n");
