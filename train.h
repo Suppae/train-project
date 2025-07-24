@@ -24,7 +24,7 @@ typedef struct seat{
 typedef struct seat_node{
     struct passenger passenger;
     struct seat seat;
-    struct seat *next;
+    struct seat_node *next;
 }seat_node;
 
 
