@@ -16,3 +16,5 @@ build/
 
 # Outros arquivos gerados
 *.out
+
+.vscode/
