@@ -71,7 +71,7 @@ void print_trains_available(train_node *head, char *station);
 
 //function for seats
 seat_node *create_list_of_seats();
-seat_node *reserve_seat(seat_node *headlistofseats, char *seat, char *nameofpassenger);
+seat_node *reserve_seat(seat_node *headlistofseats, char *seat, char *nameofpassenger,train_node *headoftrains);
 void print_seats(seat_node *headlistofseats);
 //void print_train_model();
 void print_train_model(seat_node *headlistofseats, train_node *train);
