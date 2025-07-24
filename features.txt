@@ -1,0 +1,12 @@
+Cada estação por si é um nó de uma lista. Cada comboio é um nó de uma lista os passageiros e os seus respetivos lugares serão nós que vao ser inseridos numa linked list. 
+Os lugares não ocupados vão ser representados numa lista diferente para facilitar a escolher novos lugares.
+O input/output é feito pelo terminal 
+
+
+Features:
+    1. Cada passageiro pode comprar apenas um bilhete para cada viagem.
+    2. Qualquer pessoa pode comprar um bilhete, independentemente de ser passageiro ou não.
+    3. Não se pode comprar outra viagem com a mesma origem e destino no mesmo dia.
+    4. Cada comboio vai ter um horário. (cada viagem vai ter 20 minutos)
+    5. É disponível ver todos os comboios disponíveis num dia numa certa estação.
+    6. Tempo para o passageiro.

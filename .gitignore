@@ -1,0 +1,18 @@
+# Arquivos objeto (.o)
+*.o
+
+# Executáveis
+train
+
+# Arquivos temporários, backups e swap
+*~
+*.swp
+
+# Diretórios de build (se usar algum)
+build/
+
+# Arquivos de logs
+*.log
+
+# Outros arquivos gerados
+*.out
