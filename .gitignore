@@ -1,21 +1,17 @@
-
-
-# Executáveis
+# Executáveis e arquivos compilados
 train
 *.o
 *.out
 
-# Arquivos temporários, backups e swap
+# Arquivos temporários, backups e swap (ex: criados por editores de texto)
 *~
 *.swp
 
-# Diretórios de build (se usar algum)
+# Diretórios de build
 build/
 
-# Arquivos de logs
+# Arquivos de log
 *.log
 
-# Outros arquivos gerados
-*.out
-
+# Configurações do VSCode (locais do usuário)
 .vscode/
