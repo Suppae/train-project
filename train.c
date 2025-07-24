@@ -12,7 +12,6 @@ int main(){
     print_interface_options(headlistofstations,headlistoftrains,headofseats);
     
     
-    
     printf("\n\n-------------------------------------------------------------------------FIM----------------------------------------------------------------------------\n");
     return 0;
 }
