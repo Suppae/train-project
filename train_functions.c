@@ -142,7 +142,7 @@ int is_number(const char *str) {
     return 1;
 }
 
-seat_node *reserve_seat(seat_node *headlistofseats, char *seat, char *nameofpassenger){
+seat_node *reserve_seat(seat_node *headlistofseats, char *seat, char *nameofpassenger, train_node *headoftrains) {
     if (is_number(seat)==1){}
     seat_node *new_seat = (seat_node*)malloc(sizeof(seat_node));
     if (new_seat == NULL) {
@@ -367,7 +367,7 @@ void fourth_menu(seat_node *headlistofseats,train_node *headoftrains) {
             scanf("%s", nameofpassenger);
             printf("Type the seat you want:\n");
             scanf("%s", seat);
-            reserve_seat(headlistofseats, seat, nameofpassenger);
+            reserve_seat(headlistofseats, seat, nameofpassenger, headoftrains);
             printf("%s, your seat has been reserved at train %s | %s!\n", nameofpassenger,headoftrains->train.namestartstation,headoftrains->train.namefinishstation);
             memset(nameofpassenger, 0, sizeof(nameofpassenger));
             memset(seat, 0, sizeof(seat));
@@ -378,7 +378,7 @@ void fourth_menu(seat_node *headlistofseats,train_node *headoftrains) {
             scanf("%s", nameofpassenger);
             printf("Type the seat you want:\n");
             scanf("%s", seat);
-            reserve_seat(headlistofseats, seat, nameofpassenger);
+            reserve_seat(headlistofseats, seat, nameofpassenger,headoftrains);
             printf("%s, your seat has been reserved at train %s | %s!\n", nameofpassenger,headoftrains->train.namestartstation,headoftrains->train.namefinishstation);
             memset(nameofpassenger, 0, sizeof(nameofpassenger));
             memset(seat, 0, sizeof(seat));
