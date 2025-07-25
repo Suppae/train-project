@@ -315,10 +315,12 @@ void fourth_menu(seat_node *headlistofseats,train_node *headoftrains, station_no
             print_train_model(headlistofseats,headoftrains);
             break;
         case 3:
-            if (headlistofstations->station.name != headoftrains->train.namestartstation) {
+            while (headlistofstations->station.name != headoftrains->train.namestartstation) {
                 headoftrains = headoftrains->next;
-                return;
+                headlistofstations = headlistofstations->next;
+                return headoftrains;
             }
+            
             printf("Type your name:\n");
             scanf("%s", nameofpassenger);
             printf("Type the seat you want:\n");
