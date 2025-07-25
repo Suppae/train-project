@@ -303,6 +303,7 @@ void fourth_menu(seat_node *headlistofseats,train_node *headoftrains) {
             printf("Going back...\n");
             return;
         case 2: 
+            headoftrains = headoftrains->next;
             printf("Type your name:\n");
             scanf("%s", nameofpassenger);
             printf("Type the seat you want:\n");
