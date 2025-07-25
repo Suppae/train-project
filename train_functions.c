@@ -284,68 +284,6 @@ void print_fourth_menu(){
 
 }
 
-void third_menu(train_node *headlistoftrains,seat_node *headlistofseats){
-    int option3;
-    print_third_menu();
-    while(1){
-        if (scanf("%d", &option3) != 1) {
-            printf("Invalid input. Please enter a number.\n");
-            while (getchar() != '\n'); // Limpa o buffer
-            continue;
-        }
-        switch(option3){
-        case 0:
-            printf("Exiting...\n");
-            return;
-        case 1:
-            printf("Going back...\n");
-            return;
-        case 2:
-            print_train_model(headlistofseats,"Pombal");
-            fourth_menu(headlistofseats,headlistoftrains);
-            break;
-        default:
-            printf("Invalid input. Please choose a option available.\n");
-            break;
-        }
-    }
-}
-
-
-void second_menu(train_node *headtrain,seat_node *headlistofseats){
-    int option2;
-    while(1){
-        if (scanf("%d", &option2) != 1) {
-            printf("Invalid input. Please enter a number.\n");
-            while (getchar() != '\n'); // Limpa o buffer
-            continue;
-        }
-        switch (option2){
-            
-            case 0:
-                printf("Exiting...\n");
-                return;
-            case 1:
-                printf("Going back...\n");
-                return;
-            case 2:
-                print_trains_available(headtrain,"Pombal");
-                third_menu(headtrain,headlistofseats);
-                break;
-            case 3:
-                print_trains_available(headtrain,"Coimbra");
-                third_menu(headtrain,headlistofseats);
-                break;
-            default:
-                printf("Invalid input. Please enter a valid option.\n");
-                break;
-        }
-    }
-        
-}
-
-
-
 void fourth_menu(seat_node *headlistofseats,train_node *headoftrains) {
     int option4;
     print_fourth_menu();
@@ -393,6 +331,67 @@ void fourth_menu(seat_node *headlistofseats,train_node *headoftrains) {
 }
 
 
+void third_menu(train_node *headlistoftrains,seat_node *headlistofseats){
+    int option3;
+    print_third_menu();
+    while(1){
+        if (scanf("%d", &option3) != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            while (getchar() != '\n'); // Limpa o buffer
+            continue;
+        }
+        switch(option3){
+        case 0:
+            printf("Exiting...\n");
+            return;
+        case 1:
+            printf("Going back...\n");
+            return;
+        case 2:
+            print_train_model(headlistofseats,headlistoftrains);
+            fourth_menu(headlistofseats,headlistoftrains);
+            break;
+        default:
+            printf("Invalid input. Please choose a option available.\n");
+            break;
+        }
+    }
+}
+
+
+void second_menu(train_node *headtrain,seat_node *headlistofseats){
+    int option2;
+    while(1){
+        if (scanf("%d", &option2) != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            while (getchar() != '\n'); // Limpa o buffer
+            continue;
+        }
+        switch (option2){
+            
+            case 0:
+                printf("Exiting...\n");
+                return;
+            case 1:
+                printf("Going back...\n");
+                return;
+            case 2:
+                print_trains_available(headtrain,"Pombal");
+                third_menu(headtrain,headlistofseats);
+                break;
+            case 3:
+                print_trains_available(headtrain,"Coimbra");
+                third_menu(headtrain,headlistofseats);
+                break;
+            default:
+                printf("Invalid input. Please enter a valid option.\n");
+                break;
+        }
+    }
+        
+}
+
+
 
 void print_interface_options(station_node *headstation, train_node *headtrain, seat_node *headlistofseats) {
     int option;
@@ -415,7 +414,6 @@ void print_interface_options(station_node *headstation, train_node *headtrain, s
                 break;
             case 2:
                 print_stations(headstation);
-                int option2;
                 print_second_menu(headstation);
                 second_menu(headtrain,headlistofseats);
                 break;
