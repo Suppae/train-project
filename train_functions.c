@@ -284,7 +284,7 @@ void print_fourth_menu(){
 
 }
 
-void fourth_menu(seat_node *headlistofseats,train_node *headoftrains) {
+void fourth_menu(seat_node *headlistofseats,train_node *headoftrains, station_node *headlistofstations) {
     int option4;
     print_fourth_menu();
     char nameofpassenger[MAX];
@@ -303,7 +303,7 @@ void fourth_menu(seat_node *headlistofseats,train_node *headoftrains) {
             printf("Going back...\n");
             return;
         case 2: 
-            headoftrains = headoftrains->next;
+            
             printf("Type your name:\n");
             scanf("%s", nameofpassenger);
             printf("Type the seat you want:\n");
@@ -315,6 +315,10 @@ void fourth_menu(seat_node *headlistofseats,train_node *headoftrains) {
             print_train_model(headlistofseats,headoftrains);
             break;
         case 3:
+            if (headlistofstations->station.name != headoftrains->train.namestartstation) {
+                headoftrains = headoftrains->next;
+                return;
+            }
             printf("Type your name:\n");
             scanf("%s", nameofpassenger);
             printf("Type the seat you want:\n");
@@ -332,7 +336,7 @@ void fourth_menu(seat_node *headlistofseats,train_node *headoftrains) {
 }
 
 
-void third_menu(train_node *headlistoftrains,seat_node *headlistofseats){
+void third_menu(train_node *headlistoftrains,seat_node *headlistofseats,station_node *headlistofstations) {
     int option3;
     print_third_menu();
     while(1){
@@ -350,7 +354,7 @@ void third_menu(train_node *headlistoftrains,seat_node *headlistofseats){
             return;
         case 2:
             print_train_model(headlistofseats,headlistoftrains);
-            fourth_menu(headlistofseats,headlistoftrains);
+            fourth_menu(headlistofseats,headlistoftrains,headlistofstations);
             break;
         default:
             printf("Invalid input. Please choose a option available.\n");
@@ -360,7 +364,7 @@ void third_menu(train_node *headlistoftrains,seat_node *headlistofseats){
 }
 
 
-void second_menu(train_node *headtrain,seat_node *headlistofseats){
+void second_menu(train_node *headtrain,seat_node *headlistofseats, station_node *headlistofstations) {
     int option2;
     while(1){
         if (scanf("%d", &option2) != 1) {
@@ -378,11 +382,11 @@ void second_menu(train_node *headtrain,seat_node *headlistofseats){
                 return;
             case 2:
                 print_trains_available(headtrain,"Pombal");
-                third_menu(headtrain,headlistofseats);
+                third_menu(headtrain,headlistofseats,headlistofstations);
                 break;
             case 3:
                 print_trains_available(headtrain,"Coimbra");
-                third_menu(headtrain,headlistofseats);
+                third_menu(headtrain,headlistofseats,headlistofstations);
                 break;
             default:
                 printf("Invalid input. Please enter a valid option.\n");
@@ -416,7 +420,7 @@ void print_interface_options(station_node *headstation, train_node *headtrain, s
             case 2:
                 print_stations(headstation);
                 print_second_menu(headstation);
-                second_menu(headtrain,headlistofseats);
+                second_menu(headtrain,headlistofseats, headstation);
                 break;
             default:
                 printf("Invalid input. Please choose a option available.\n");
